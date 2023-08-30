@@ -127,19 +127,22 @@ class LinkedList {
 
         this.head = null;
         this.tail = null;
+        let currentNode = this.head;
 
         for (let i = 0; i < tempList.size(); i++) {
-            let currentNode = this.head;
             if (i == 0){
                 this.head = tempList.head
+                currentNode = this.head;
             }else if(i == tempList.size()){
                 this.tail = tempList.tail;
+                currentNode = this.head;
             }else{
                 if(currentNode.next == null){
 
                 }
                 else{
                     this.append(currentNode.next)
+                    currentNode = currentNode.next;
             }
             
         }
